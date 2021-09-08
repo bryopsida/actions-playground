@@ -2,13 +2,18 @@
   "name": "js-action",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "action.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "ncc build action.js -o dist --source-map --license licenses.txt",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "all": "npm run prepare"
   },
   "author": "",
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@actions/github": "^5.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.30.0"
   }
 }
