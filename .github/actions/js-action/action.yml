@@ -1,0 +1,5 @@
+name: 'js-action'
+description: 'Test JS Action'
+runs:
+  using: 'node12'
+  main: 'action.js'
