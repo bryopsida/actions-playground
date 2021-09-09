@@ -6336,12 +6336,13 @@ async function run() {
         const result = await octokit.rest.actions.createWorkflowDispatch({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            workflow_id: 'invoke-js-action',
+            workflow_id: 'invoke-js-action.yml',
             ref: 'master'
         });
         core.info(`status code of invoke = ${result.status}`);
         core.info(`request id of invoke = ${result.headers['x-github-request-id']}`)
     } catch(error) {
+        core.info('Exception occurred');
         core.setFailed(error.message);
     }
 }
