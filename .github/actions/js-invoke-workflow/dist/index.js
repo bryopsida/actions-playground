@@ -6329,7 +6329,7 @@ const github = __nccwpck_require__(438);
 
 async function run() {
     try {
-        const token = core.getIput('token');
+        const token = core.getInput('token');
         const octokit = github.getOctokit(token);
         const result = await octokit.rest.createWorkflowDispatch({
             owner: 'bryopsida',

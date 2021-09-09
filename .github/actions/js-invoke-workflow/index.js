@@ -3,7 +3,7 @@ const github = require('@actions/github');
 
 async function run() {
     try {
-        const token = core.getIput('token');
+        const token = core.getInput('token');
         const octokit = github.getOctokit(token);
         const result = await octokit.rest.createWorkflowDispatch({
             owner: 'bryopsida',
