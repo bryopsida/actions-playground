@@ -1,4 +1,4 @@
-name: 'js-invoke-action'
+name: 'invoke-js-action'
 description: 'Invoke another workflow action'
 inputs:
   token:
