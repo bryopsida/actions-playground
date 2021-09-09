@@ -13,7 +13,7 @@ async function run() {
             workflow_id: 'invoke-invoke.yml',
             ref: 'master'
         });
-        core.info(result);
+        core.info(`result of action invoke = ${JSON.stringify(result)}`);
     } catch(error) {
         core.setFailed(error.message);
     }
