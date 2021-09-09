@@ -1,0 +1,20 @@
+{
+    "name": "js-invoke-workflow",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "prepare": "ncc build index.js -o dist --source-map --license licenses.txt",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "all": "npm run prepare"
+    },
+    "author": "",
+    "dependencies": {
+        "@actions/core": "^1.5.0",
+        "@actions/github": "^5.0.0",
+        "@octokit/rest": "^18.10.0"
+    },
+    "devDependencies": {
+        "@vercel/ncc": "^0.30.0"
+    }
+}
