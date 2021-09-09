@@ -1,5 +1,9 @@
 name: 'js-invoke-action'
 description: 'Invoke another workflow action'
+inputs:
+  token:
+    required: true
+    description: "Github token"
 runs:
   using: 'node12'
   main: 'dist/index.js'
