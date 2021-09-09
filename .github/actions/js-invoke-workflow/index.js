@@ -4,10 +4,11 @@ const github = require('@actions/github');
 async function run() {
     try {
         const token = core.getInput('token');
+        const context = github.context;
         const octokit = github.getOctokit(token);
-        const result = await octokit.rest.createWorkflowDispatch({
-            owner: 'bryopsida',
-            repo: 'actions-playground',
+        const result = await octokit.rest.actions.createWorkflowDispatch({
+            owner: context.actor,
+            repo: context.repo,
             workflow_id: 'invoke-invoke.yml',
             ref: 'master'
         });
