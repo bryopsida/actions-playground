@@ -10,7 +10,7 @@ async function run() {
         const result = await octokit.rest.actions.createWorkflowDispatch({
             owner: context.repo.owner,
             repo: context.repo.repo,
-            workflow_id: 'invoke-invoke.yml',
+            workflow_id: 'invoke-js-action',
             ref: 'master'
         });
         core.info(`result of action invoke = ${JSON.stringify(result)}`);
