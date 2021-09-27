@@ -1,0 +1,15 @@
+name: Install MicroK8S
+on: 
+  workflow_dispatch:
+jobs:
+  run:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: install microk8s
+        run: |
+          sudo snap install microk8s --classic
+        timeout-minutes: 8
+      - name: dump logs
+        if: always()
+        run: |
+          sudo journalctl --since yesterday

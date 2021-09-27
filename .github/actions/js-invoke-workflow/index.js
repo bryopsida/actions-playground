@@ -15,6 +15,8 @@ async function run() {
         });
         core.info(`status code of invoke = ${result.status}`);
         core.info(`request id of invoke = ${result.headers['x-github-request-id']}`)
+
+        const events = github.activity.
     } catch(error) {
         core.info('Exception occurred');
         core.setFailed(error.message);
