@@ -3,6 +3,10 @@ on:
   workflow_dispatch:
 jobs:
   run:
+    strategy:
+      fail-fast: true
+      matrix: 
+        run: [0, 1, 2, 3 , 4]
     runs-on: 'ubuntu-latest'
     steps:
       - name: install microk8s
