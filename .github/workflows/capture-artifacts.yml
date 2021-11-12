@@ -8,4 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run : |
+          export VERSION_A=$RANDOM
+          export VERSION_B=$RANDOM
+          echo -n VERSION_A > a.version.txt
+          echo -n VERSION_B > b.version.txt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: a.version.txt
+          path: a.version.txt
+      - uses: actions/upload-artifact@v2
+        with:
+          name: b.version.txt
+          path: b.version.txt
     
