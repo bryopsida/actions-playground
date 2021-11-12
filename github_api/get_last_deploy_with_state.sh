@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 env=$1
 state=$2
 

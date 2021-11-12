@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 deploy_url="${1}"
 artifact_workflow_name="${2}"
 artifact_name="${3}"
