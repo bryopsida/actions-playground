@@ -6,3 +6,9 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - uses: actions/checkout@v2
+      - run: |
+          export deployment_url=$(./github_api/get_last_deploy_with_state.sh test success)
+          ./github_api/get_artifact_from_deployment.sh "$deployment_url" 'capture-artifacts.yml' 'a.version.txt'
+          ./github_api/get_artifact_from_deployment.sh "$deployment_url" 'capture-artifacts.yml' 'b.version.txt'
+          export a_version=$(cat a.version.txt)
+          export b_version=$(cat b.version.txt)
