@@ -1,0 +1,9 @@
+name: Slow Workflow
+on: 
+  workflow_dispatch:
+jobs:
+  be-slow:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        sleep 300
