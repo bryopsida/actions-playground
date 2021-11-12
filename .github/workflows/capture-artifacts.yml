@@ -1,0 +1,11 @@
+name: 'Capture Artifact Revisions'
+on:
+  push:
+    branches:
+      - master
+jobs:
+  capture-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+    
