@@ -1,0 +1,8 @@
+name: Lookup Artifacts Associated with deployment
+on: 
+  workflow_dispatch:
+jobs:
+  lookup:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - uses: actions/checkout@v2

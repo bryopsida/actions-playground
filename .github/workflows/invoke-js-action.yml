@@ -1,3 +1,4 @@
+name: Invoke JavaScript Action
 on: 
   workflow_dispatch:
   repository_dispatch:
