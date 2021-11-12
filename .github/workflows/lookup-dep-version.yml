@@ -12,3 +12,5 @@ jobs:
           ./github_api/get_artifact_from_deployment.sh "$deployment_url" 'capture-artifacts.yml' 'b.version.txt'
           export a_version=$(cat a.version.txt)
           export b_version=$(cat b.version.txt)
+          echo $a_version
+          echo $b_version
