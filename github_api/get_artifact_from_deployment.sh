@@ -11,4 +11,4 @@ artifacts=$(curl -s -H "Authorization: token $GITHUB_PAT" "$artifacts_url")
 archive_download_url=$(echo $artifacts | jq '.artifacts[] | select(.name == "'$artifact_name'") | .archive_download_url' | tr -d '"')
 echo "artifact download url = $archive_download_url "
 curl -O -J -L -H "Authorization: token $GITHUB_PAT" "$archive_download_url"
-tar -xvf "$artifact_name".zip
+unzip "$artifact_name".zip
