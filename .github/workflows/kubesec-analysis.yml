@@ -29,6 +29,11 @@ jobs:
         working-directory: helm/test-app
         run: |
           helm template . > infra.yaml
+      - name: actions/upload-artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: infra-template-render
+          path: helm/test-app/infra.yaml
       - name: Run kubesec scanner
         uses: controlplaneio/kubesec-action@43d0ddff5ffee89a6bb9f29b64cd865411137b14
         with:
@@ -37,7 +42,11 @@ jobs:
           template: template/sarif.tpl
           output: kubesec-results.sarif
           exit-code: "0"
-
+      - name: actions/upload-artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: kubesec-analysis
+          path: kubesec-results.sarif
       - name: Upload Kubesec scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v1
         with:
