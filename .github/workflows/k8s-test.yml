@@ -26,5 +26,6 @@ jobs:
         env:
           APP_PORT: 8080
         run: |
+          npm ci
           npm test
 
