@@ -21,6 +21,11 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - name: 'Echo Service Info'
+        run: |
+          kubectl get nodes -o wide
+          kubectl get services -o wide
+          kubectl get ingresses -o wide
       - name: 'Run APP E2E Tests'
         working-directory: ./test_app
         env:
