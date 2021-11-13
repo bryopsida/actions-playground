@@ -18,4 +18,4 @@ jobs:
       - name: 'Deploy Test App With Helm'
         working-directory: helm/test-app
         run: |
-          helm upgrade --install --name test-app . --wait --timeout 120s
+          helm upgrade --install --wait --timeout 120s test-app .
