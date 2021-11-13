@@ -9,12 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: 'Install Microk8s'
-        run: |
-          sudo snap install microk8s --classic
-          sudo microk8s.enable dns storage traefik
-          sudo microk8s status --wait-ready
-        timeout-minutes: 8
+      - uses: balchua/microk8s-actions@v0.2.1
+        with:
+          channel: '1.19/stable'
+          addons: '["dns", "rbac", "storage", "traefik"]'
       - name: 'Deploy Test App With Helm'
         working-directory: helm/test-app
         run: |
