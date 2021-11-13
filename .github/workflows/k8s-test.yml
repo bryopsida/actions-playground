@@ -27,8 +27,7 @@ jobs:
       - name: 'Deploy Test App With Helm'
         working-directory: helm/test-app
         run: |
-          export APP_HOST=$(hostname)
-          helm upgrade --install --wait --timeout 120s --set ingress.defaultHostName="$APP_HOST" test-app .
+          helm upgrade --install --wait --timeout 120s test-app .
       - name: 'Setup Node.JS'
         uses: actions/setup-node@v1
         with:
@@ -43,7 +42,6 @@ jobs:
         env:
           APP_PORT: 80
         run: |
-          export APP_HOST=$(hostname)
           npm ci
           npm test
 
