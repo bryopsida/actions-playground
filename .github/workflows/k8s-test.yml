@@ -41,7 +41,7 @@ jobs:
       - name: 'Run APP E2E Tests'
         working-directory: ./test_app
         env:
-          APP_PORT: 8080
+          APP_PORT: 80
         run: |
           export APP_HOST=$(hostname)
           npm ci

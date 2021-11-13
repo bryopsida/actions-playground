@@ -4,6 +4,8 @@ const axios = require('axios');
 const port = process.env.APP_PORT || 3000;
 const hostname = process.env.APP_HOST || 'localhost';
 
+console.log(`Testing against ${hostname}:${port}`)
+
 describe('TestApp', function() {
   describe('echo', function() {
     it('should return same message sent as an echo', function() {
