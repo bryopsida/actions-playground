@@ -13,7 +13,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 12.x
-      - run: |
+      - working-directory: ./test_app
+        run: |
           npm run ci
           node index.js &
           npm run test
