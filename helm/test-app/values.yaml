@@ -45,8 +45,9 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
+  defaultHostName: "localhost"
   hosts:
-    - host: "localhost"
+    - host: "{{ .Values.ingress.defaultHostName }}"
       paths:
         - path: /
           pathType: ImplementationSpecific
