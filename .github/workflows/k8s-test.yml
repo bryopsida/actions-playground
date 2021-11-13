@@ -24,8 +24,8 @@ jobs:
       - name: 'Echo Service Info'
         run: |
           kubectl get nodes -o wide
-          kubectl get services -o wide
-          kubectl get ingresses -o wide
+          kubectl get services --all-namespaces -o wide
+          kubectl get ingresses --all-namespaces  -o wide
       - name: 'Run APP E2E Tests'
         working-directory: ./test_app
         env:
