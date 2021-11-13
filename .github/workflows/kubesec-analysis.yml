@@ -32,7 +32,7 @@ jobs:
       - name: Run kubesec scanner
         uses: controlplaneio/kubesec-action@43d0ddff5ffee89a6bb9f29b64cd865411137b14
         with:
-          input: infra.yaml # specify configuration file to scan here
+          input: helm/test-app/infra.yaml # specify configuration file to scan here
           format: template
           template: template/sarif.tpl
           output: kubesec-results.sarif
