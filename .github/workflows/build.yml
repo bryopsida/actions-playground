@@ -15,7 +15,7 @@ jobs:
           node-version: 12.x
       - working-directory: ./test_app
         run: |
-          npm run ci
+          npm ci
           node index.js &
           npm run test
           killall node
