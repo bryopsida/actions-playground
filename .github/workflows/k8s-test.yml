@@ -23,7 +23,7 @@ jobs:
       - uses: balchua/microk8s-actions@v0.2.2
         with:
           channel: '1.22/stable'
-          addons: '["dns", "rbac", "storage", "traefik"]'
+          addons: '["dns", "rbac", "storage", "ingress"]'
       - name: 'Deploy Test App With Helm'
         working-directory: helm/test-app
         run: |
