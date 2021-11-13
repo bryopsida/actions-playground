@@ -17,3 +17,14 @@ jobs:
         working-directory: helm/test-app
         run: |
           helm upgrade --install --wait --timeout 120s test-app .
+      - name: 'Setup Node.JS'
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: 'Run APP E2E Tests'
+        working-directory: ./test_app
+        env:
+          APP_PORT: 8080
+        run: |
+          npm test
+
