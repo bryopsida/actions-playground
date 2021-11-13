@@ -10,5 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 12.x
       - run: |
-          exit 0
+          npm run ci
+          node index.js &
+          npm run test
+          killall node
